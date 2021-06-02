@@ -4,7 +4,7 @@ from flask import jsonify, request
 from flask_cors import CORS
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+# app.config["DEBUG"] = True
 cors = CORS(app, resources={r'/api/*': {'origins': '*'}})
 
 
