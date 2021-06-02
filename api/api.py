@@ -8,10 +8,8 @@ app = flask.Flask(__name__)
 # app.config["DEBUG"] = True
 cors = CORS(app, resources={r'/api/*': {'origins': '*'}})
 
-if os.environ.get('APP_LOCATION') == 'heroku':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
-else:
-    app.run(host='localhost', port=5000, debug=True)
+app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+# app.run(host='localhost', port=5000, debug=True)
 
 
 @app.route('/', methods=['GET'])
